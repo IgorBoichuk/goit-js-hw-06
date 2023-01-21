@@ -22,15 +22,17 @@ const countRefItem = document.querySelectorAll(".item");
 // const countRef = document.querySelectorAll("#categories");
 // const countRef = document.querySelectorAll("#categories");
 
-console.log(countRefItem);
+// console.log(countRefItem.length);
 
-// console.log(`Number of categories: ${}`);
+console.log(
+  `Number of categories: ${document.querySelectorAll(".item").length}`
+);
+
+console.log(`Category:: ${document.querySelector("h2").textContent}`);
+console.log(`Elements: ${document.querySelectorAll("li.item")}`);
 
 // console.log(`Category:: ${}`);
-// console.log(`Elements: ${}`);
+// console.log(`Elements: ${document.querySelectorAll("li").length}`);
 
 // console.log(`Category:: ${}`);
-// console.log(`Elements: ${}`);
-
-// console.log(`Category:: ${}`);
-// console.log(`Elements: ${}`);
+// console.log(`Elements: ${document.querySelectorAll("ul").length}`);
