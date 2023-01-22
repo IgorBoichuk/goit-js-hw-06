@@ -18,21 +18,26 @@
 // Category: Technologies
 // Elements: 5
 
-const countRefItem = document.querySelectorAll(".item");
+// const countRefItem = document.querySelector("ul>li>ul");
 // const countRef = document.querySelectorAll("#categories");
 // const countRef = document.querySelectorAll("#categories");
 
-// console.log(countRefItem.length);
+// console.log(document.querySelector("ul>li>ul"));
 
-console.log(
-  `Number of categories: ${document.querySelectorAll(".item").length}`
-);
+// const categoriesEl = document.querySelectorAll('.item');
+// console.log(Number of categories: ${categoriesEl.length});
 
-console.log(`Category:: ${document.querySelector("h2").textContent}`);
-console.log(`Elements: ${document.querySelectorAll("li.item")}`);
+// for (const el of categoriesEl) {
+//   console.log(Category: ${ el.firstElementChild.textContent });
+//   console.log(Elements: ${ el.lastElementChild.children.length });
+// }
 
-// console.log(`Category:: ${}`);
-// console.log(`Elements: ${document.querySelectorAll("li").length}`);
+const catNum = document.querySelectorAll(".item");
+console.log(`Number of categories: ${catNum.length}`);
 
-// console.log(`Category:: ${}`);
-// console.log(`Elements: ${document.querySelectorAll("ul").length}`);
+const countAnimslsCats = document.querySelectorAll("ul>li");
+
+for (const cats of catNum) {
+  console.log(`Category: ${cats.firstElementChild.textContent}`);
+  console.log(`Elements: ${cats.lastElementChild.children.length}`);
+}
