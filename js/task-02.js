@@ -19,11 +19,15 @@ const ingredients = [
 ];
 
 const ulIngredients = document.querySelector("#ingredients");
+const ingradsArray = [];
 
 ingredients.forEach((elem) => {
   const li = document.createElement("li");
-  li.classList = "item";
+  li.classList.add("item");
   li.textContent = elem;
-  ulIngredients.append(li);
+  ingradsArray.push(li);
+  // ulIngredients.append(li);
+  // ulIngredients.insertAdjacentElement("beforeend", li);
 });
+ulIngredients.append(...ingradsArray);
 console.log(ulIngredients);
