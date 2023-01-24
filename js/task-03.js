@@ -29,23 +29,17 @@ const imgArray = [];
 
 images.forEach((elem) => {
   const itemMyImage = `
-  <li><img class="my-image" src="${elem.url}" alt="${elem.alt}"></li>
+  <li class="items-task-3">
+  <img class="images-task-3" src="${elem.url}" alt="${elem.alt}">
+  </li>
   `;
 
-  // const imageItem = document.createElement("li");
   const image = document.createElement("img");
-  // imageItem.classList.add("my-image");
+
   image.src = elem.url;
   image.alt = elem.alt;
   imgArray.push(itemMyImage);
-  // imageItem.append(image);
-
-  // console.log(itemMyImage);
 });
 const imgJoin = imgArray.join("");
-// console.log(imgJoin);
-// console.log(imgArray);
 
-ulArray.insertAdjacentHTML("beforebegin", imgJoin);
-// ulArray.append(...imgArray);
-// console.log(imgArray[0]);
+ulArray.insertAdjacentHTML("afterbegin", imgJoin);
