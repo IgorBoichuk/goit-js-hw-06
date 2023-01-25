@@ -10,26 +10,30 @@
 // Додай слухачів кліків до кнопок, всередині яких збільшуй або зменшуй значення лічильника.
 // Оновлюй інтерфейс новим значенням змінної counterValue.
 
-// const btn = document.querySelector("decrement");
-// const btn = document.querySelector("increment");
 const decrementButton = document.querySelector(
   'button[data-action="decrement"]'
 );
 const incrementButton = document.querySelector(
   'button[data-action="increment"]'
 );
-let spanValue = document.querySelector("#value");
+const spanValue = document.querySelector("#value");
 
-console.log(decrementButton);
-console.log(incrementButton);
-console.log(spanValue);
+const counter = {
+  value: 0,
+  decrement() {
+    this.value -= 1;
+  },
+  increment() {
+    this.value += 1;
+  },
+};
 
 decrementButton.addEventListener("click", function () {
-  const bla = spanValue.textContent * 1;
-  const ghu = bla + bla + 1;
-  console.log(ghu);
+  counter.decrement();
+  spanValue.textContent = counter.value;
 });
 
 incrementButton.addEventListener("click", function () {
-  console.log("cvbfcfbcfb");
+  counter.increment();
+  spanValue.textContent = counter.value;
 });
