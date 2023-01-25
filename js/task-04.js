@@ -18,6 +18,18 @@ const decrementButton = document.querySelector(
 const incrementButton = document.querySelector(
   'button[data-action="increment"]'
 );
+let spanValue = document.querySelector("#value");
 
 console.log(decrementButton);
 console.log(incrementButton);
+console.log(spanValue);
+
+decrementButton.addEventListener("click", function () {
+  const bla = spanValue.textContent * 1;
+  const ghu = bla + bla + 1;
+  console.log(ghu);
+});
+
+incrementButton.addEventListener("click", function () {
+  console.log("cvbfcfbcfb");
+});
