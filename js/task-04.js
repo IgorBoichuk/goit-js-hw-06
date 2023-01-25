@@ -28,7 +28,7 @@ const counter = {
   },
 };
 
-decrementButton.addEventListener("click", function () {
+decrementButton.addEventListener("click", () => {
   counter.decrement();
   spanValue.textContent = counter.value;
 });
