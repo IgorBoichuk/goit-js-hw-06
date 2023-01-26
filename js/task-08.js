@@ -16,6 +16,7 @@
 // відбуватися відповідно до події submit.
 // Під час відправлення форми сторінка не повинна
 // перезавантажуватися.
+
 // Якщо у формі є незаповнені поля, виводь alert з
 // попередженням про те, що всі поля повинні бути заповнені.
 // Якщо користувач заповнив усі поля і відправив
@@ -25,20 +26,50 @@
 // властивість elements.
 // Виведи об'єкт із введеними даними в консоль і
 // очисти значення полів форми методом reset.
-const form = document.querySelector(".login-form");
-console.log(form);
 
-form.addEventListener("submit", submitOnForm);
+// const refs = {
+//   form: document.querySelector(".login-form"),
+//   input: document.querySelector("input"),
+//   button: document.querySelector("button"),
+// };
+const input = document.querySelector("input[email]");
+console.log(input);
+
+refs.form.addEventListener("submit", submitOnForm);
+refs.input.addEventListener("input", submitOnForm);
 
 function submitOnForm(event) {
   event.preventDefault();
-
-  console.dir(event.currentTarget.elements);
-
-  const formData = new FormData(event.currentTarget);
-
-  formData.forEach((value, name) => {
-    console.log(value, name);
-  });
+  console.log(event.currentTarget);
+  // const formData = new FormData(event.currentTarget);
+  // console.dir(formData.value);
 }
-// https://youtu.be/iJq-NwbZL84?t=2268
+
+// formData.forEach((value, name) => {
+// console.log(value);
+// console.log(name);
+// console.log(formData.value);
+// if (value.currentTarget === null) {
+//   alert("Всі поля повинні бути заповнені!");
+// }
+// console.dir(value.currentTarget);
+// });
+
+// const form = document.querySelector('.login-form')
+
+// form.addEventListener('submit', handleSubmit)
+
+// function handleSubmit(event) {
+//   event.preventDefault()
+//   const {
+//     elements: { email, password },
+//   } = event.currentTarget
+
+//   if (email.value === '' || password.value === '') {
+//     return alert('Будь ласка, заповніть усі поля!')
+//   }
+//   const userDetails = { email: email.value, Password: password.value }
+
+//   console.log(userDetails)
+//   event.currentTarget.reset()
+// }
