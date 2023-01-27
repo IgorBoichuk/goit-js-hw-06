@@ -27,49 +27,24 @@
 // Виведи об'єкт із введеними даними в консоль і
 // очисти значення полів форми методом reset.
 
-// const refs = {
-//   form: document.querySelector(".login-form"),
-//   input: document.querySelector("input"),
-//   button: document.querySelector("button"),
-// };
-const input = document.querySelector("input[email]");
-console.log(input);
-
-refs.form.addEventListener("submit", submitOnForm);
-refs.input.addEventListener("input", submitOnForm);
+const inputForm = document.querySelector(".login-form");
+inputForm.addEventListener("submit", submitOnForm);
 
 function submitOnForm(event) {
   event.preventDefault();
-  console.log(event.currentTarget);
-  // const formData = new FormData(event.currentTarget);
-  // console.dir(formData.value);
+
+  const {
+    elements: { email, password },
+  } = event.currentTarget;
+
+  // console.dir(event.currentTarget.elements.email.value);
+  // console.dir(event.currentTarget.elements.password.value);
+
+  if (email.value === "" || password.value === "") {
+    return alert("Всі поля повинні бути заповнені!");
+  }
+  const userDetails = { email: email.value, Password: password.value };
+
+  console.log(userDetails);
+  event.currentTarget.reset();
 }
-
-// formData.forEach((value, name) => {
-// console.log(value);
-// console.log(name);
-// console.log(formData.value);
-// if (value.currentTarget === null) {
-//   alert("Всі поля повинні бути заповнені!");
-// }
-// console.dir(value.currentTarget);
-// });
-
-// const form = document.querySelector('.login-form')
-
-// form.addEventListener('submit', handleSubmit)
-
-// function handleSubmit(event) {
-//   event.preventDefault()
-//   const {
-//     elements: { email, password },
-//   } = event.currentTarget
-
-//   if (email.value === '' || password.value === '') {
-//     return alert('Будь ласка, заповніть усі поля!')
-//   }
-//   const userDetails = { email: email.value, Password: password.value }
-
-//   console.log(userDetails)
-//   event.currentTarget.reset()
-// }
