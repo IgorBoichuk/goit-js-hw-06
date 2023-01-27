@@ -34,10 +34,6 @@ images.forEach((elem) => {
   </li>
   `;
 
-  const image = document.createElement("img");
-
-  image.src = elem.url;
-  image.alt = elem.alt;
   imgArray.push(itemMyImage);
 });
 const imgJoin = imgArray.join("");
