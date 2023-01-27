@@ -40,10 +40,11 @@ function createBoxes() {
 
   for (let item of colorGenerator.value) {
     console.log(item);
-    divBoxes.insertAdjacentHTML("afterbegin", squareDiv);
-    divBoxes.style.backgroundColor = getRandomHexColor();
-    divBoxes.style.width = "30px";
-    divBoxes.style.height = "30px";
+
+    divBoxes.append(squareDiv);
+    // divBoxes.style.backgroundColor = getRandomHexColor();
+    // divBoxes.style.width = "30px";
+    // divBoxes.style.height = "30px";
   }
 }
 
