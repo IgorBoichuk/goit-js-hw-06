@@ -29,7 +29,15 @@ const divBoxes = document.querySelector("#boxes");
 
 console.log(divBoxes);
 
-const squareDiv = `<div class="div-color" width = 30px height = 30px color = red></div>`;
+const squareDiv = `<div class="div-color">
+<style>
+  .div-color {
+    background-color: red;
+    width: 30px;
+    height: 30px;
+  }
+</style>
+</div>`;
 
 createBtn.addEventListener("click", createBoxes);
 destroyBtn.addEventListener("click", destroyBoxes);
@@ -39,7 +47,6 @@ destroyBtn.addEventListener("click", destroyBoxes);
 // });
 
 function createBoxes(amount) {
-  console.log("create!!!!!!!!!!!!!!!!!!!!");
   divBoxes.insertAdjacentHTML("afterbegin", squareDiv);
 }
 
