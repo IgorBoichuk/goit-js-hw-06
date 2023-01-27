@@ -32,21 +32,25 @@ const squareDiv = `<div class="div-color"></div>`;
 createBtn.addEventListener("click", createBoxes);
 destroyBtn.addEventListener("click", destroyBoxes);
 
-function createBoxes(amount) {
+function createBoxes() {
   if (Number(colorGenerator.value) === 0) {
     return alert("Задайте кількість блоків для створення!");
   }
-  console.log(Number(colorGenerator.value));
+  // console.log(Number(colorGenerator.value));
 
-  // divBoxes.insertAdjacentHTML("afterbegin", squareDiv);
-  // divBoxes.style.backgroundColor = getRandomHexColor();
-  // divBoxes.style.width = "30px";
-  // divBoxes.style.height = "30px";
+  for (let item of colorGenerator.value) {
+    console.log(item);
+    divBoxes.insertAdjacentHTML("afterbegin", squareDiv);
+    divBoxes.style.backgroundColor = getRandomHexColor();
+    divBoxes.style.width = "30px";
+    divBoxes.style.height = "30px";
+  }
 }
 
 function destroyBoxes() {
-  console.log("destroy!!!!!!!!!!!!!!!!!!!!");
-  // divBoxes.remove(squareDiv);
+  const removeSquareDiv = document.querySelector(".div-color");
+  removeSquareDiv.remove();
+  // removeSquareDiv.reset();
 }
 
 function getRandomHexColor() {
