@@ -31,19 +31,12 @@
 const input = document.querySelector("#validation-input");
 
 input.addEventListener("blur", () => {
-  console.log(input.value.length);
-
-  if (input.value.length === 0) {
-    input.classList.remove("valid");
+  if (input.value.length === Number(input.dataset.length)) {
+    input.classList.add("valid");
     input.classList.remove("invalid");
-    return;
-  } else if (input.value.length < input.dataset.length) {
-    input.classList.add("invalid");
-    input.classList.remove("valid");
 
     return;
   }
-  input.classList.add("valid");
-  input.classList.remove("invalid");
-  return;
+  input.classList.add("invalid");
+  input.classList.remove("valid");
 });
