@@ -27,31 +27,31 @@ const createBtn = document.querySelector("button[data-create]");
 const destroyBtn = document.querySelector("button[data-destroy]");
 const divBoxes = document.querySelector("#boxes");
 
-const squareDiv = `<div class="div-color"></div>`;
-
 createBtn.addEventListener("click", createBoxes);
 destroyBtn.addEventListener("click", destroyBoxes);
+console.dir(divBoxes.children.length);
 
-function createBoxes() {
-  if (Number(colorGenerator.value) === 0) {
-    return alert("Задайте кількість блоків для створення!");
-  }
-  // console.log(Number(colorGenerator.value));
+function createBoxes(amount) {
+  amount = Number(colorGenerator.value);
+  // if (amount === 0) {
+  //   return alert("Задайте кількість блоків для створення!");
+  // }
+  for (let i = 0; i < amount; i += 1) {
+    const squareDiv = document.createElement("div");
+    squareDiv.style.backgroundColor = getRandomHexColor();
 
-  for (let item of colorGenerator.value) {
-    console.log(item);
+    const size = 30 + 10 * i;
+    squareDiv.style.width = `${size}px`;
+    squareDiv.style.height = `${size}px`;
 
     divBoxes.append(squareDiv);
-    // divBoxes.style.backgroundColor = getRandomHexColor();
-    // divBoxes.style.width = "30px";
-    // divBoxes.style.height = "30px";
+    console.dir(divBoxes.children.length);
   }
 }
 
 function destroyBoxes() {
-  const removeSquareDiv = document.querySelector(".div-color");
-  removeSquareDiv.remove();
-  // removeSquareDiv.reset();
+  divBoxes.innerHTML = "";
+  colorGenerator.value = "";
 }
 
 function getRandomHexColor() {
