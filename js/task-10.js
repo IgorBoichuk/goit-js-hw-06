@@ -33,9 +33,7 @@ console.dir(divBoxes.children.length);
 
 function createBoxes(amount) {
   amount = Number(colorGenerator.value);
-  // if (amount === 0) {
-  //   return alert("Задайте кількість блоків для створення!");
-  // }
+
   for (let i = 0; i < amount; i += 1) {
     const squareDiv = document.createElement("div");
     squareDiv.style.backgroundColor = getRandomHexColor();
