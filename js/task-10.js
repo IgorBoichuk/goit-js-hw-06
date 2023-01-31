@@ -31,7 +31,15 @@ createBtn.addEventListener("click", createBoxes);
 destroyBtn.addEventListener("click", destroyBoxes);
 console.dir(divBoxes.children.length);
 
+let clearBoxes = () => {
+  const divBoxItems = document.querySelectorAll("#boxes>div");
+  divBoxItems.forEach((item) => {
+    item.remove();
+  });
+};
+
 function createBoxes(amount) {
+  clearBoxes();
   amount = Number(colorGenerator.value);
 
   for (let i = 0; i < amount; i += 1) {
@@ -48,8 +56,8 @@ function createBoxes(amount) {
 }
 
 function destroyBoxes() {
-  divBoxes.innerHTML = "";
-  colorGenerator.value = "";
+  clearBoxes();
+  colorGenerator.value = "0";
 }
 
 function getRandomHexColor() {
